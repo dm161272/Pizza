@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`city` (
   `city_name` VARCHAR(25) NOT NULL,
   `province_index` INT NOT NULL,
   PRIMARY KEY (`id`, `province_index`),
-  INDEX `fk_province_index_idx` (`province_index` ASC),
+  INDEX `fk_province_index_idx` (`province_index` ASC) ,
   CONSTRAINT `fk_province_index`
     FOREIGN KEY (`province_index`)
     REFERENCES `mydb`.`province` (`id`)
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`customer` (
   `last_name` VARCHAR(25) NOT NULL,
   `first_name` VARCHAR(15) NOT NULL,
   `street` VARCHAR(25) NOT NULL,
-  `building` INT NOT NULL,
+  `street_number` VARCHAR(5) NOT NULL,
   `entrance` INT NOT NULL,
   `floor` INT NULL,
   `apartment` INT NULL,
